@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f3a5f">
+<title>对公业务 SOP 知识库</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== 顶部栏 ===== -->
+<header class="topbar" id="topbar">
+  <button class="icon-btn only-mobile" id="btnMenu" aria-label="打开目录">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+
+  <a class="brand" href="#/home">
+    <span class="brand-mark">SOP</span>
+    <span class="brand-text">
+      <strong>对公业务知识库</strong>
+      <em>客户经理流程与要点手册</em>
+    </span>
+  </a>
+
+  <div class="search-wrap">
+    <svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="searchInput" type="search" placeholder="搜索 SOP、材料、风险点…" autocomplete="off" aria-label="搜索知识库">
+    <kbd class="only-desktop">/</kbd>
+    <button class="search-close only-mobile" id="searchClose" aria-label="关闭搜索">取消</button>
+    <div class="search-panel" id="searchPanel" hidden></div>
+  </div>
+
+  <div class="topbar-actions">
+    <button class="icon-btn only-mobile" id="btnSearchMobile" aria-label="搜索">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    </button>
+    <button class="icon-btn" id="btnTheme" aria-label="切换深浅色">
+      <svg viewBox="0 0 24 24" class="ico-moon"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ===== 侧边栏 ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="drawer-head only-mobile">
+      <b>目录</b>
+      <button class="x" id="btnDrawerClose" aria-label="关闭目录">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="side-nav" id="sideNav"></nav>
+    <div class="side-foot">
+      <div class="progress-box">
+        <div class="pb-head"><span>整体学习进度</span><b id="pbVal">0%</b></div>
+        <div class="pb-track"><i id="pbBar"></i></div>
+        <div class="pb-sub" id="pbSub">共 0 个步骤</div>
+      </div>
+      <div class="version">v1.0 · 内容截至 2026-10</div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- ===== 主区 ===== -->
+  <main class="main" id="main">
+    <div class="view" id="view"></div>
+    <footer class="page-foot">
+      <p>本知识库为内部学习与流程参考材料，具体业务以监管规定、总行制度及最新文件为准。</p>
+      <p class="muted">© 2026 对公业务知识库 · 内容由客户经理团队共建</p>
+    </footer>
+  </main>
+</div>
+
+<!-- ===== 移动端底部导航 ===== -->
+<nav class="tabbar only-mobile" id="tabbar">
+  <a href="#/home" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg><span>首页</span></a>
+  <a href="#/map" data-tab="map"><svg viewBox="0 0 24 24"><path d="M4 5h6v6H4zM14 5h6v6h-6zM4 13h6v6H4zM14 13h6v6h-6z"/></svg><span>地图</span></a>
+  <a href="#/lib" data-tab="lib"><svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h6"/></svg><span>SOP</span></a>
+  <a href="#/checklist" data-tab="checklist"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 10l2 2 3-3M8 16h8"/></svg><span>清单</span></a>
+  <a href="#/me" data-tab="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg><span>我的</span></a>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
